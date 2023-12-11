@@ -1,7 +1,6 @@
+# EXPRESSCLUSTER X SingleServerSafe with MySQL Database on Linux.
 
-# EXPRESSCLUSTER X Single Server Safe with MySQL Database on Linux.
-
-This guide describes how to setup EXPRESSCLUSTER X Single Safe Server with MySQL Database on RedHat Linux Environment. 
+This guide describes how to setup EXPRESSCLUSTER X SingleServerSafe with MySQL Database on RedHat Linux Environment. 
 EXPRESSCLUSTER X SingleServerSafe is set up on a server. It monitors for application errors and hardware failures on the server and, upon detecting an error or failure, restarts the failed application or reboots the server to ensure greater server availability.
 May refer to [this site](https://www.nec.com/expresscluster) for details of ECX itself.
 
@@ -35,12 +34,12 @@ May refer to [this site](https://www.nec.com/expresscluster) for details of ECX 
 
 ### Cluster installation
 
-1. Unzip the downloaded EXPRESSCLUSTER X SSS file 
+1. Unzip the downloaded EXPRESSCLUSTER X SingleServerSafe file 
 
     ```
     [root@Linuxms ~]# unzip ecxsss51l_x64.zip
     ```
-2. Browse to your EXPRESSCLUSTER X SSS Package file
+2. Browse to your EXPRESSCLUSTER X SingleServerSafe Package file
 
     ```
     [root@Linuxms ~]# cd ecxsss51l_x64/Linux/5.1/en/server/
@@ -48,13 +47,13 @@ May refer to [this site](https://www.nec.com/expresscluster) for details of ECX 
     expressclssss-5.1.1-1.x86_64.rpm
     ```
 
-3. Install EXPRESSCLUSTER X SSS
+3. Install EXPRESSCLUSTER X SingleServerSafe
 
     ```
     [root@Linuxms server]# rpm -ivh expressclssss-5.1.1-1.x86_64.rpm
     ```
 
-4. Configure EXPRESSCLUSTER X SSS required Licenses
+4. Configure EXPRESSCLUSTER X SingleServerSafe required Licenses
 
 ### Cluster configuration
 

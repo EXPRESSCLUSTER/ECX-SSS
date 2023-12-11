@@ -1,7 +1,6 @@
+# EXPRESSCLUSTER X SingleServerSafe with MSSQL Database on Windows.
 
-# EXPRESSCLUSTER X Single Safe Server with MSSQL Database on Windows.
-
-This guide describes how to setup EXPRESSCLUSTER X Single Safe Server with MSSQL Database on Windows Server 2022 Environment. 
+This guide describes how to setup EXPRESSCLUSTER X SingleServerSafe with MSSQL Database on Windows Server 2022 Environment. 
 EXPRESSCLUSTER X SingleServerSafe is set up on a server. It monitors for application errors and hardware failures on the server and, upon detecting an error or failure, restarts the failed application or reboots the server to ensure greater server availability.
 May refer to [this site](https://www.nec.com/expresscluster) for details of ECX itself.
 
@@ -11,7 +10,7 @@ May refer to [this site](https://www.nec.com/expresscluster) for details of ECX 
 
 - Windows Server 2022 Standard
 - MSSQL 2022
-- EXPRESSCLUSTER X SSS 5.1.1
+- EXPRESSCLUSTER X SingleServerSafe 5.1.1
 
 ### System configuration
 
@@ -23,7 +22,7 @@ May refer to [this site](https://www.nec.com/expresscluster) for details of ECX 
  |  |  +----------------------------------------------+
  +-----| Server (10.0.7.195)                          |
  |  |  |  Windows Server 2022 Standard                |           
- |  |  |  EXPRESSCLSSSS 5.1                           |
+ |  |  |  EXPRESSCLUSTER X SingleServerSafe 5.1                           |
  |  +--|  MSSQL 2022                                  |
  |  |  +----------------------------------------------+
  |  |
@@ -31,7 +30,7 @@ May refer to [this site](https://www.nec.com/expresscluster) for details of ECX 
 [Gateway]
  :
 ```
-### ExpressCluster X SSS Installation Procedure
+### EXPRESSCLUSTER X SingleServerSafe installation procedure
 
 Please refer https://www.nec.com/en/global/prod/expresscluster/en/doc/manuals/W51_SSS_IG_EN_04.pdf
 
@@ -41,7 +40,7 @@ Please refer https://www.nec.com/en/global/prod/expresscluster/en/doc/manuals/W5
   - **MSSQLSRV (Service Resource)**: Manages SQLSERVER service 
   - **SQLAGENTS (Service Resource)**: Manages SQLAgent Service 
 
-#### Monitor Resources
+#### Monitor resources
   - **servicew1 (MSSQL Monitor)**: Monitors the status of MSSQL service.
   - **servicew2 (MSSQLAGENT Monitor)**: Monitors the status of MSSQL Agent service.
   - **diskw (Disk RW monitor)**: Monitors the SSS Server device by using the WRITE(FILE) monitoring.
@@ -53,8 +52,8 @@ Please refer https://www.nec.com/en/global/prod/expresscluster/en/doc/manuals/W5
   - **psw (Process Name Monitor)**: Monitors the process of specified processes.
   - **sraw (System Monitor)**: Periodically collect the amounts of system resources and disk resources used and then analyze the amounts.
 
-###  Group Resource Configuration
-#### Open Cluster WebUI Config Mode and Configure the failover group "SQLSRVRGRP".
+###  Group resource configuration
+#### Open cluster WebUI config mode and configure the failover group "SQLSRVRGRP".
 
 1. #### Configure MSSQL service resource "mssqlsrv".
 	  - Click on Add resource botton (+) under failover group "SQLSRVRGRP".
@@ -79,12 +78,12 @@ Please refer https://www.nec.com/en/global/prod/expresscluster/en/doc/manuals/W5
 		- Details  
 			Click connect and select [SQL Server Agent (<instance name>)]
 1. Apply the configuration
-1. Start the resources on ECXSSS Server.
+1. Start the resources on EXPRESSCLUSTER X SingleServerSafe Server.
 
-### Add Monitor Resource
-#### Start Cluster WebUI Config Mode
+### Add monitor resource
+#### Start cluster WebUI config mode
 
-1. #### Configure SQLServer service monitor resource "Servicew1" to existing failover group "SQLSRVRGRP".
+1. #### Configure SQL Server service monitor resource "Servicew1" to existing failover group "SQLSRVRGRP".
 	 - Click on Add Monitor Resource botton (+) under failover group "SQLSRVRGRP".
    - Monitor(common)
      - Monitor Timing: Active (Target resource: MSSQLSRV)
